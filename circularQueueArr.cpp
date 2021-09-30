@@ -81,7 +81,7 @@ int CircularQueue::dequeue()
 
 void CircularQueue::display()
 {
-    if (!isEmpty())
+    if (!isEmpty() && front + 1 <= rear)
     {
         int i = front + 1;
         do
@@ -125,6 +125,10 @@ int main()
                 cq.display();
                 cout << '\n';
             }
+            else
+            {
+                goto label;
+            }
         }
         break;
         default:
@@ -134,7 +138,7 @@ int main()
         cin >> ch;
     }
 
-    // Display
+label:
     cq.display();
     cout << '\n';
 }
