@@ -150,7 +150,7 @@ void Node ::display()
         cout << temp->num << " -> ";
         temp = temp->next;
     } while (temp != start);
-    cout << " null\n";
+    cout << " \n";
 }
 void Node ::del()
 {
