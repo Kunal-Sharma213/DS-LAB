@@ -211,6 +211,7 @@ void Node ::del()
 
                     prev->next = start;
                     start->prev = prev;
+                    rear = prev;
                     delete (temp);
                     index = -1;
                     size--;
