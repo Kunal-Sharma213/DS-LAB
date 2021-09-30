@@ -52,7 +52,7 @@ void Node::enqueue()
 }
 int Node ::isEmpty()
 {
-    if (rear->next == NULL)
+    if (start == NULL || rear == NULL)
         return 1;
     return 0;
 }
@@ -66,7 +66,9 @@ int Node ::dequeue()
     }
     if (rear == start)
     {
-        delete start;
+        Node *p = start;
+        start = rear = NULL;
+        delete p;
         return 0;
     }
     Node *p = start;
@@ -96,13 +98,20 @@ void Node::listSize()
 }
 void Node ::display()
 {
-    Node *temp = start;
-    do
+    if (start)
     {
-        cout << temp->num << " -> ";
-        temp = temp->next;
-    } while (temp != start);
-    cout << " \n";
+        Node *temp = start;
+        do
+        {
+            cout << temp->num << " -> ";
+            temp = temp->next;
+        } while (temp != start);
+        cout << " \n";
+    }
+    else
+    {
+        cout << " -> \n";
+    }
 }
 int main()
 {
