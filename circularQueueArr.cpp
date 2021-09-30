@@ -112,6 +112,8 @@ int main()
             int num;
             cin >> num;
             cq.enqueue(num);
+            cq.display();
+            cout << '\n';
         }
         break;
         case 2:
